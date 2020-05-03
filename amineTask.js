@@ -1,6 +1,6 @@
 /**
  * 使用说明请看 https://github.com/e1399579/autojs/blob/master/README.md
- * @author ridersam <e1399579@gmail.com>
+ * @author jackxu <huangbuyanhuang@gmail.com>
  */
 auto(); // 自动打开无障碍服务
 var config = files.isFile('set.js') ? require('set.js') : {};
