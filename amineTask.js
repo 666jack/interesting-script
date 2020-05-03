@@ -39,6 +39,8 @@ function start(options) {
     device.wakeUp();
     sleep(600);
     log('wakeUp');
+    // swipe_layer();
+    // sleep(1000); // 等待屏幕亮起
   }
 
   var Robot = require('Robot.js');
@@ -55,7 +57,7 @@ function start(options) {
       let iDate = new Date();
       let next_to = iDate.getTime() + 30 * 1000;
       addTimes('', fmtTimeString(next_to));
-      toastLog('1分钟后重试');
+      toastLog('添加了1分钟后重试111');
       exit();
     }
 
@@ -719,7 +721,7 @@ function AntForest(robot, options) {
       img = null // 取消对 img 的引用,显示解除内存占用
       clickCount++
     } 
-    console.log('共点击了', clickCount, '次')
+    console.log(`共点击了 ${clickCount} 次`)
   }
   function clickByTextDesc(energyType, paddingY) {
     var clicked = false;
