@@ -721,7 +721,7 @@ function AntForest(robot, options) {
       img = null // 取消对 img 的引用,显示解除内存占用
       clickCount++
     } 
-    console.log('共点击了', clickCount, '次')
+    console.log(`共点击了 ${clickCount} 次`)
   }
   function clickByTextDesc(energyType, paddingY) {
     var clicked = false;
