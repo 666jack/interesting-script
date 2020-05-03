@@ -705,8 +705,9 @@ function AntForest(robot, options) {
   this.takeColor = function(color, mine) {
     // 152宽, 174高: 能量球 
     let point = true;
+    let clickCount = 1;
     while(point){
-      var img = captureScreen(); // 7bc576 未成熟的
+      let img = captureScreen();
       point = findColor(img, color, {
         region: [164, 586, 729, 228],
         threshold: 2
@@ -715,8 +716,12 @@ function AntForest(robot, options) {
           log("找到能量球，坐标为(" + point.x + ", " + point.y + ")");
           click(point.x, point.y)
       }
-      point = !mine && point
-    }    
+
+      point = !mine && point && (clickCount < 15)
+      img = null // 取消对 img 的引用,显示解除内存占用
+      clickCount++
+    } 
+    console.log(`共点击了 ${clickCount} 次`)
   }
   function clickByTextDesc(energyType, paddingY) {
     var clicked = false;
